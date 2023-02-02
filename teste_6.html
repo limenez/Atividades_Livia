@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8" />
+    <title>TESTE_6</title>
+
+
+
+    <style>
+        body{
+            background-color: black;
+            color: whitesmoke;
+            font-family: Arial;
+            font-size: 15pt;
+        }
+        .campo {
+            width: 250px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div>
+        <form>
+            <h1>Valor de produtos</h1>
+            <input type="number" id="valor" name="valor">
+            <h2>Condições de Pagamento</h2>
+            <p>Escolha uma ou mais opções:</p>
+            <table>
+                <tr>
+                    <th>Opções</th>
+                    <th>Condicoes de pagamento</th>
+
+                </tr>
+                <tr>
+                    <td><input type="radio" id="codigo" name="pagamento" value="1">À Vista</td>
+                    <td>À vista 10% de desconto</td>
+                </tr>
+                <tr>
+                    <td> <input type="radio" id="codigo" name="pagamento" value="2">Cartão Crédito</td>
+                    <td>Cartão 5% de desconto</td>
+                </tr>
+                <tr>
+                    <td> <input type="radio" id="codigo" name="pagamento" value="3">Parcelamento</td>
+                    <td>Parcelado 10% de aumento</td>
+                </tr>
+            </table>
+            <br />
+            <div>
+                <button type="button" onclick="myFunction()">Resultado</button>
+            </div>
+        </form>
+
+    </div>
+    <div id="resultado">
+    </div>
+
+    <script>
+        function myFunction() {
+            // Get the value of the input field with id="numb"
+            //  var cod = getElementById("codigo").checked;
+            var valor = parseFloat(document.getElementById('valor').value);
+            var opcao = document.getElementsByName('pagamento');
+            var codigo;
+            for (var i = 0; i < opcao.length; i++) {
+                if (opcao[i].checked) {
+                    codigo = opcao[i].value;
+                }
+            }
+            var texto, soma, desconto, juros, resultado;
+            if (codigo == 1) {
+                desconto = valor * 0.10;
+                soma = valor - desconto;
+                texto = "À vista 10% de desconto: " + soma;
+            } else
+                if (codigo == 2) {
+                    desconto = valor * 0.05;
+                    soma = valor - desconto;
+                    texto = "Cartão 5% de desconto: " + soma;
+                } else {
+                    juros = valor * 0.10;
+                    soma = juros + valor;
+                    texto = "Parcelado 10% de aumento: " + soma;
+                }
+            document.getElementById("resultado").innerHTML = texto;
+        }
+
+
+    </script>
+    <div align="center" class="sent">
+        <button class="btn-back"><a href='teste_6.html'>NOVAMENTE</a></button>
+        <button class="btn-back"><a href='index.html'>RETORNO</a></button>
+    </div>
+
+</body>
+
+</html>

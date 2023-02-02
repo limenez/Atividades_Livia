@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8" />
+    <title>TESTE_8</title>
+
+    <style>
+        body {
+            background-color: lightslategray;
+            font-family: 'Times New Roman';
+            font-size: 15pt;
+            color: snow;
+        }
+    </style>
+
+
+</head>
+
+<body>
+
+<script>
+    function CalculoRendadeImposto() {
+        var Registro = document.getElementById("R").value;
+        var Nome = document.getElementById("N").value;
+        var Salario = document.getElementById("S").value;
+        var Juros = parseFloat(Salario);
+        /* for (var i = 0; i < valor.length; i++) {
+            if (opcao[i].checked) {
+                salario = valor[i].value;
+            }
+        } */
+        /* var Salario = parseFloat(tx1); */
+
+        
+        if (Salario <= 1434) {
+            Juros = Salario * 0;
+            /* newSalario = juros; */
+            newSalario = parseFloat(Juros.toFixed(3));
+            /* document.getElementById("res").value = "0% (isento): " + newSalario; */
+        }
+
+        else if (Salario >= 1434 && Salario <= 2150) {
+            Juros = Salario * 0.075;
+            newSalario = parseFloat(Juros.toFixed(3));
+            /* document.getElementById("res").value = "7,5%: " + newSalario; */
+        }
+
+
+        else if (Salario >= 2150 && Salario <= 2866) {
+            Juros = Salario * 0.15;
+            newSalario = parseFloat(Juros.toFixed(3));
+            /* document.getElementById("res").value = "15%: " + newSalario; */
+        }
+
+        else if (Salario >= 2866 && Salario <= 3582) {
+            Juros = Salario * 0.225;
+            newSalario = parseFloat(Juros.toFixed(3));
+            /* document.getElementById("res").value = "22,5%: " + newSalario; */
+        }
+
+
+        else{
+        /* else if (Salario >= 3.582) { */
+            Juros = Salario * 0.275;
+            newSalario = parseFloat(Juros.toFixed(3));
+            
+        }
+
+        document.getElementById("res").value = "R$: " + newSalario;
+    }
+</script>
+
+<form name="calc">
+    <h1>Calculo Renda de Imposto</h1>
+    <div>
+        <div class="Nomes"> Registro: </div>
+        <input id="R" type="text" class="campo" />
+    </div>
+    <br />
+    <div>
+        <div class="Nomes">Nome: </div>
+        <input id="N" type="text" class="campo" />
+    </div>
+    <br />
+    <div>
+        <div class="Nomes">Salario: </div>
+        <input id="S" type="number" class="campo" />
+    </div>
+    <br />
+    <div>
+        <input type="button" value="Resultado" onclick="CalculoRendadeImposto()"/>
+    </div>
+    <br />
+    <div>
+        <div class="Nomes">Imposto de Renda: </div>
+        <input id="res" type="text" class="campo"/>
+    </div><br />
+
+
+</form>
+<div align="center" class="sent">
+    <button class="btn-back"><a href='teste_8.html'>NOVAMENTE</a></button>
+    <button class="btn-back"><a href='index.html'>RETORNO</a></button>
+</div>
+
+</body>
+
+</html>

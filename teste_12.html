@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<htm>
+
+<head>
+
+    <meta charset="utf-8"/>
+    <title>TESTE_12</title>
+    <script>
+        window.onload=function() {
+            var num;
+            var tentativas=0;
+            var msg = document.getElementById("mensagem");
+            var dica = document.getElementById("errou");
+
+
+
+            num = sortearNum();
+
+            document.getElementById("botao").onclick = function(){
+                tentativas++;
+                var chute = parseInt(document.getElementById("chut").value);
+                if (chute < num){
+                    dica.value = "O número sorteado é maior.";
+                } else if (chute > num){
+                    dica.value = "O número sorteado é menor.";
+                } else {
+                    msg.innerHTML = "Você acertou!!!" + "Tentativas: " + tentativas;
+                } 
+            }
+        }  
+            
+    function sortearNum(){
+        return Math.round(Math.random()*100);
+    }
+
+    </script>
+</head>
+
+    
+<body>
+
+    <form>
+        Chute: <input Type="text" id="chut"><br>
+        <input type="button" value="Verificar" id="botao"><br>
+        Dica: <Input type="text" id="errou" readonly><br>
+    </form>
+        <div id="mensagem"></div>
+        <div align="center" class="sent">
+            <button class="btn-back"><a href='teste_6.html'>NOVAMENTE</a></button>
+            <button class="btn-back"><a href='index.html'>RETORNO</a></button>
+        </div>
+</body>
+
+</html>

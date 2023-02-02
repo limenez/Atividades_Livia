@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8"/>
+    <title>TESTE_9</title>
+    
+
+
+</head>
+
+<body>
+    <script>
+        function calcular(calc){
+
+            event.preventDefault();
+            var valor1 = parseFloat(document.getElementById("valor1").value);
+            var valor2 = parseFloat(document.getElementById("valor2").value);
+
+
+
+            if (calc == "soma"){
+            resultado = valor1 + valor2;
+        }
+        else if (calc == "diminuir"){
+            resultado = valor1 - valor2;
+        }
+        else if (calc == "multiplicar"){
+            resultado = valor1 * valor2;
+        }
+        else if (calc == "dividir"){
+            resultado = valor1 / valor2;
+        }
+
+        document.getElementById("res").value = + resultado;
+    }
+    </script>
+
+
+
+    <form id="calculadora">
+        <h1>Calculadora Simples</h1>
+        <div>
+            <div class="Nomes">Primeiro Valor: </div>
+            <input id="valor1" type="text" name="valor1" class="campo" />
+        </div>
+        <br/>
+        <div>
+            <div class="Nomes">Segundo Valor: </div>
+            <input id="valor2" type="text" name="valor2" class="campo" />
+        </div><br/>
+
+
+            <div id="calc">
+                <input type="button" id="Soma" value="+" onclick="calcular('soma')" />
+                <input type="button" id="Subtrair" value="-" onclick="calcular('diminuir')" />
+                <input type="button" id="Multiplicar" value="*" onclick="calcular('multiplicar')" />
+                <input type="button" id="Dividir" value="/" onclick="calcular('dividir')" />
+            </div>
+
+            <br/>
+                <div class="Nomes">Resultado: </div>
+                <input id="res" type="text" name="valor" class="campo" />
+            </div><br/>
+    </form>
+    <div align="center" class="sent">
+        <button class="btn-back"><a href='teste_9.html'>NOVAMENTE</a></button>
+        <button class="btn-back"><a href='index.html'>RETORNO</a></button>
+    </div>
+
+
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+        

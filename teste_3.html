@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+        
+    <meta charset="utf-8"/>
+    <title>TESTE_3</title>
+
+</head>
+
+<body>
+    <script>
+        window.onload = function() {
+            var btn = document.getElementById("botao");
+            btn.onclick = function() {
+                var num1 = document.getElementById("valor1").value;
+                var num2 = document.getElementById("valor2").value;
+
+
+                if (num1 > num2){
+                    alert("O Primeiro valor é maior");
+                } else {
+                    if (num1 < num2) {
+                        alert("O Segundo valor é maior");
+                    } else {
+                        alert("Os valores são iguais");
+                    }
+                }
+                
+            }
+        }
+    </script>
+
+
+
+    <form>
+        <h1>Exercicio</h1>
+        <div>
+            <div class="Nomes">Valor 1: </div>
+            <input id="valor1" type="text" name="valor" class="campo" placeholder="Digite o 1º valor aqui" />
+        </div>
+        <br/>
+        <div>
+            <div class="Nomes">Valor 2: </div>
+            <input id="valor2" type="text" name="valor" class="campo" placeholder="Digite o 2º valor aqui" />
+        </div><br/>
+
+        <div>
+            <input type="button" id="botao" value="Mostre" />
+        </div><br/>
+
+    </form>
+    <div align="center" class="sent">
+        <button class="btn-back"><a href='teste_3.html'>NOVAMENTE</a></button>
+        <button class="btn-back"><a href='index.html'>RETORNO</a></button>
+    </div>
+
+</body>
+</html>

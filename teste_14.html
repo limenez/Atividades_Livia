@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8" />
+    <title>TESTE_14</title>
+
+    <style>
+        .tabela {
+            border: 22px double red;
+            font-family: Verdana;
+            font-size: 18pt;
+            width: 400px;
+            padding: 30px;
+
+        }
+
+        input {
+            font-size: 18pt;
+            border: 1px solid black;
+            background-color: yellow;
+        }
+
+        li {
+            list-style: none;
+        }
+    </style>
+
+
+
+</head>
+
+<body>
+    <script>
+        function calcular() {
+
+            event.preventDefault();
+            var valor1 = parseFloat(document.getElementById("valor1").value);
+            var valor2 = parseFloat(document.getElementById("valor2").value);
+            var codigo;
+
+        
+            if (document.getElementById('c1').checked == true) {
+                resultado = valor1 + valor2;
+
+            }
+
+            if (document.getElementById('c2').checked == true) {
+                resultado = valor1 - valor2;
+            }
+            if (document.getElementById('c3').checked == true) {
+                resultado = valor1 * valor2;
+
+            }
+            if (document.getElementById('c4').checked == true) {
+                resultado = valor1 / valor2;
+            }
+
+            document.getElementById("res").value = "" + resultado;
+
+        }
+
+    </script>
+
+
+    <div class="tabela">
+
+        <Label>Valor 1:<input type="number" id="valor1" value=""></input></Label><br><br>
+        <Label>Valor 2:<input type="number" id="valor2" value=""></input></Label>
+        <br><br>
+
+        <div id="calc"><b>Opções</b>
+            <li><input type="radio" id="c1" name="calc" />SOMA</li>
+            <li><input type="radio" id="c2" name="calc" />SUBSTRAÇÃO</li>
+            <li><input type="radio" id="c3" name="calc" />MULTIPLICAÇÃO</li>
+            <li><input type="radio" id="c4" name="calc" />DIVISÃO</li>
+        </div>
+
+        <br>
+        <b>Resultado:</b>
+        <input id="res" type="text" class="campo" disabled /><br><br>
+        <button onClick="calcular()">Calcular</button>
+
+    </div>
+
+    <div align="center" class="sent">
+        <button class="btn-back"><a href='teste_14.html'>NOVAMENTE</a></button>
+        <button class="btn-back"><a href='index.html'>RETORNO</a></button>
+    </div>
+
+
+</body>
+
+</html>

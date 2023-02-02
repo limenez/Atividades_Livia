@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TESTE_15</title>
+</head>
+<body>
+
+    <video id="video" width="640" height="480" autoplay></video>
+    <button id="snap">Capturar Foto</button>
+    <canvas id="canvas" width="640" height="480"></canvas>
+
+    <script>
+        // Pega elementos, cria configurações, etc
+        var video = document.getElementById('video');
+    
+        // Tenha acesso à câmera!
+        if(navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+            //Não adicionando `{audio: true}` uma vez que queremos apenas vídeo agora 
+            navigator.mediaDevices.getUserMedia({ video: true }).then(function(stream) {
+                //video.src = window.URL.createObjectURL (stream);
+                video.srcObject = stream;
+                video.play();
+            });
+        }
+    
+            // Elementos para obter o instantâneo
+        var canvas = document.getElementById('canvas');
+        var context = canvas.getContext('2d');
+        var video = document.getElementById('video');
+    
+        // Aciona o capturar foto
+        document.getElementById("snap").addEventListener("click", function() {
+            context.drawImage(video, 0, 0, 640, 480);
+        });
+    
+    
+        </script>
+
+<div align="center" class="sent">
+    <button class="btn-back"><a href='teste_11.html'>NOVAMENTE</a></button>
+    <button class="btn-back"><a href='index.html'>RETORNO</a></button>
+</div>
+
+
+    
+</body>
+</html>

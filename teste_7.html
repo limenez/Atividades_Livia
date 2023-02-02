@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8" />
+    <title>TESTE_7</title>
+
+    <style>
+        body {
+            background-color: darkorange;
+            font-family: arial;
+            font-size: 20pt;
+            color: whitesmoke;
+        }
+    </style>
+
+</head>
+
+<body>
+
+
+    <script type="text/javascript">
+        function calcula_imc() {
+            var altura = document.imcForm.altura.value;
+            var peso = document.imcForm.peso.value;
+            var quadrado = (altura * altura);
+            var calculo = (peso / quadrado);
+            var sexo;
+
+            /* Aqui no grupo de feminino */
+            if (document.getElementById('sx1').checked == true) {
+                sexo = ("Feminino");
+                if (calculo < 19.1) {
+                    alert(sexo + " - " + "Abaixo do peso: " + calculo);
+                }
+                else if (calculo >= 19.5 && calculo < 25.8) {
+                    alert(sexo + " - " + "No peso normal: " + calculo);
+                }
+
+                else if (calculo >= 25.8 && calculo < 27.3) {
+                    alert(sexo + " - " + "Marginalmente acima do peso: " + calculo);
+                }
+                else if (calculo >= 27.3 && calculo < 32.3) {
+                    alert(sexo + " - " + "Acima do peso ideal: " + calculo);
+                }
+                else {
+                    alert("Obeso: " + calculo);
+                };
+            }
+
+
+            /* Aqui no grupo de masculino */
+            if (document.getElementById('sx2').checked == true) {
+                sexo = ("Masculino");
+                if (calculo < 20.7) {
+                    alert(sexo + " - " + "Abaixo do peso: " + calculo);
+                }
+                else if (calculo >= 20.7 && calculo < 26.4) {
+                    alert(sexo + " - " + "No peso normal: " + calculo);
+                }
+
+                else if (calculo >= 26.4 && calculo < 27.8) {
+                    alert(sexo + " - " + "Marginalmente acima do peso: " + calculo);
+                }
+                else if (calculo >= 27.8 && calculo < 31.1) {
+                    alert(sexo + " - " + "Acima do peso ideal: " + calculo);
+                }
+                else {
+                    alert("Obeso: " + calculo);
+                };
+            }
+
+
+
+        }
+    </script>
+
+    <title>Calculadora de IMC</title>
+
+
+    <body>
+
+        <form name="imcForm" id="imcForm" action="#">
+
+            <p>
+                Altura<br />
+                <input type="text" id="altura" name="altura" />
+            </p>
+
+            <p>Peso <br />
+                <input type="text" id="peso" name="peso" />
+            </p>
+
+            <p>
+            <form>
+                <label>
+                    <input type="radio" name="sexo" value="op??o" id="sx2" />
+                    Masculino</label>
+                <br>
+                <label>
+                    <input type="radio" name="sexo" value="op??o" id="sx1" />
+                    Feminino</label>
+            </form>
+            </p> <span style="font-size: medium;"><a href="" target=?_blank?></a>
+                <p><input name="Enviar" type="submit" value="Calcular" onclick="calcula_imc()" />
+                <p></p>
+
+                <div align="center" class="sent">
+                    <button class="btn-back"><a href='teste_7.html'>NOVAMENTE</a></button>
+                    <button class="btn-back"><a href='index.html'>RETORNO</a></button>
+                </div>
+    </body>
+
+</html>

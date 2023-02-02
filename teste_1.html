@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    
+    <meta charset="UTF-8">
+    <title>TESTE_1</title>
+
+</head>
+
+<body>
+    <script type="text/javascript">
+    var Vtotal, Parcelas, vtotal, juros, soma;
+    Vtotal = parseFloat(prompt("Entre com o valor total da compra: "));
+    parcelas = parseFloat(prompt("Entra com a qtde de parcelas (1,2,4): "));
+
+        switch (parcelas) 
+                {
+            case 1:
+
+            juros = Vtotal * 0;
+            soma = juros + Vtotal;
+            alert("O valor com juros é: " + soma);
+            break;
+
+            case 2:
+                
+            juros = Vtotal * 0.03;
+            soma = juros + Vtotal;
+            alert("O valor com juros é: " + soma);
+            break;
+
+            case 4:
+
+            juros = Vtotal * 0.07;
+            soma = juros + Vtotal;
+            alert("O valor com juros é: " + soma);
+            break;
+        default:
+                alert("Número de parcelas inválido");
+        
+        }
+    </script>
+    <div align="center" class="sent">
+        <button class="btn-back"><a href='index.html'>RETORNO</a></button>
+    </div>
+</body>
+
+</html>

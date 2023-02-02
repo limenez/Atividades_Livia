@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8"/>
+    <title>TESTE_4</title>
+    
+</head>
+
+<body>
+    <script>
+        window.onload = function() {
+            var btn = document.getElementById("botao");
+            btn.onclick = function() {
+                var base = document.getElementById("A").value;
+                var altura = document.getElementById("B").value;
+                var area = base * altura;
+
+                document.write("O valor da área do retângulo é: " + area + "m²");
+
+
+            }
+        }
+    </script>
+
+
+
+    <form>
+        <h1>Exercicio 4</h1>
+        <div>
+            <div class="Nomes">Base: </div>
+            <input id="B" type="text" name="valor" class="campo" placeholder="Digite a base aqui" />
+        </div>
+        <br/>
+        <div>
+            <div class="Nomes">Altura: </div>
+            <input id="A" type="text" name="valor" class="campo" placeholder="Digite a altura aqui" />
+        </div><br/>
+
+        <div>
+            <input type="button" id="botao" value="Mostrar" /><br/>
+        </div>
+    
+    
+    
+    </form>
+    
+
+</body>
+</html>
